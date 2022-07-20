@@ -2,8 +2,8 @@
 # fbprophet for additive models, #pytrends for Google trend data
 import pandas as pd
 import numpy as np
-import fbprophet
-
+#Prophet
+from prophet import Prophet
 # matplotlib pyplot for plotting
 import matplotlib.pyplot as plt
 
@@ -342,7 +342,7 @@ class Stocker():
     def create_model(self):
 
         # Make the model
-        model = fbprophet.Prophet(daily_seasonality=self.daily_seasonality,  
+        model = Prophet(daily_seasonality=self.daily_seasonality,  
                                   weekly_seasonality=self.weekly_seasonality, 
                                   yearly_seasonality=self.yearly_seasonality,
                                   changepoint_prior_scale=self.changepoint_prior_scale,
