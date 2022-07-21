@@ -4,15 +4,19 @@ import pandas as pd
 import numpy as np
 #Prophet
 from prophet import Prophet
+import matplotlib
+import platform
+if platform.system() == 'Darwin':
+    matplotlib.use('MacOSX')
+    import matplotlib
+    matplotlib.use('TkAgg')
 # matplotlib pyplot for plotting
 import matplotlib.pyplot as plt
-
-import matplotlib
 
 # Class for analyzing and (attempting) to predict future prices
 # Contains a number of visualizations and analysis methods
 class Stocker():
-    
+
     # Initialization requires a ticker symbol
     def __init__(self, price):
         self.symbol = 'the stock'
